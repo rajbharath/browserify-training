@@ -15,8 +15,9 @@
   },
   "devDependencies": {
     "browserify": "latest",
-    "watchify": "latest",
     "gulp": "latest",
-    "vinyl-source-stream": "latest"
+    "gulp-util": "^3.0.7",
+    "vinyl-source-stream": "latest",
+    "watchify": "latest"
   }
 }

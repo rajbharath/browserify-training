@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     source = require('vinyl-source-stream'),
@@ -17,6 +18,10 @@ function bundle() {
    .pipe(gulp.dest(destFolder));
 }
 
+function log(message) {
+  gutil.log(message);
+}
+
 gulp.task('browserify', function () {
   bundle();
 });
@@ -24,6 +29,7 @@ gulp.task('browserify', function () {
 gulp.task('watch', function () {
   var bundler = watchify(b);
   bundler.on('update', bundle);
+  bundler.on('log', log);
   bundle();
 });
 
