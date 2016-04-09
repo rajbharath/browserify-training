@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     source = require('vinyl-source-stream'),
+    server = require('gulp-webserver'),
     sourceFile = './js/main.js',
     destFolder = './dist',
     destFile = 'findem.js',
@@ -33,4 +34,13 @@ gulp.task('watch', function () {
   bundle();
 });
 
-gulp.task('default', ['browserify', 'watch']);
+gulp.task('serve', function () {
+  gulp.src('.')
+    .pipe(server({
+      livereload: true,
+      open: "/index.html",
+      directoryListing: true,
+     }));
+});
+
+gulp.task('default', ['browserify', 'watch', 'serve']);

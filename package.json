@@ -17,6 +17,7 @@
     "browserify": "latest",
     "gulp": "latest",
     "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
     "vinyl-source-stream": "latest",
     "watchify": "latest"
   }
