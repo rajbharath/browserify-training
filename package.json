@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-js": "browserify js/main.js -o js/findem.js -d"
+    "build-js": "browserify js/main.js -o js/findem.js -d",
+    "watch-js": "watchify js/main.js -o js/findem.js -dv"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "underscore": "latest"
   },
   "devDependencies": {
-    "browserify": "latest"
+    "browserify": "latest",
+    "watchify": "^3.7.0"
   }
 }
